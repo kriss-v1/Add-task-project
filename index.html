@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TaskFlow - a simple, focused to-do list.">
+  <title>TaskFlow | To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="todo-app" aria-labelledby="app-title">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">Stay on track</p>
+          <h1 id="app-title">TaskFlow</h1>
+          <p class="subtitle">A quieter way to get things done.</p>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch color mode">
+          <span class="theme-icon" aria-hidden="true">Dark</span>
+        </button>
+      </header>
+
+      <form class="task-form" id="task-form" novalidate>
+        <label class="sr-only" for="task-input">New task</label>
+        <input id="task-input" type="text" maxlength="160" placeholder="What needs to be done?" autocomplete="off">
+        <button class="add-button" type="submit">Add task</button>
+      </form>
+      <p class="input-error" id="input-error" role="alert" aria-live="polite"></p>
+
+      <div class="task-toolbar">
+        <p class="task-count" id="task-count" aria-live="polite">0 tasks left</p>
+        <div class="filters" aria-label="Filter tasks" role="group">
+          <button class="filter-button is-active" type="button" data-filter="all">All</button>
+          <button class="filter-button" type="button" data-filter="active">Active</button>
+          <button class="filter-button" type="button" data-filter="completed">Completed</button>
+        </div>
+      </div>
+
+      <ul class="task-list" id="task-list" aria-label="Tasks"></ul>
+      <div class="empty-state" id="empty-state" hidden>
+        <div class="empty-mark" aria-hidden="true">+</div>
+        <h2>Nothing here yet</h2>
+        <p>Add a task above and give your day a little direction.</p>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
